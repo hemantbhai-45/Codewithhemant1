@@ -1,0 +1,6 @@
+services:
+  - name: navbar-service   # <-- Ha tumcha blueprint name vapra
+    type: web
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm start
