@@ -96,6 +96,7 @@ function Navbar({ darkMode, setDarkMode }) {
             </Link>
           </li>
         </ul>
+        
       </div>
 
       {/* Mobile Sidebar Menu */}
@@ -187,7 +188,7 @@ function Navbar({ darkMode, setDarkMode }) {
           </li>
         </ul>
 
-       <div className="px-4 mt-4 flex justify-center">
+       <div className="px-4 mt-4 flex justify-center md:hidden">
   <button
     onClick={() => setDarkMode(!darkMode)}
     className={`px-4 py-2 rounded-md border shadow-md transition
