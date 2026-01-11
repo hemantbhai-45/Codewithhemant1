@@ -1,53 +1,70 @@
-import React, { useState, useEffect } from 'react';
-import './App.css';
-import Navbar from './components/Navbar';
-import Login from './components/Login';
-import Home from './components/Home';
-import About from './components/About';
-import Signup from './components/Signup';
-import Skill from './components/Skill';
-import Project from './components/Project';
-import Contact from './components/Contact';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import Navbar from "./components/Navbar";
+import Login from "./components/Login";
+import Home from "./components/Home";
+import About from "./components/About";
+import Signup from "./components/Signup";
+import Skill from "./components/Skill";
+import Project from "./components/Project";
+import Contact from "./components/Contact";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 
 function App() {
+  // Dark mode state with localStorage
   const [darkMode, setDarkMode] = useState(() => {
-    const savedMode = localStorage.getItem('darkMode');
-    return savedMode === 'true' ? true : false;
+    const savedMode = localStorage.getItem("darkMode");
+    return savedMode === "true";
   });
 
   useEffect(() => {
-    localStorage.setItem('darkMode', darkMode);
+    localStorage.setItem("darkMode", darkMode);
     if (darkMode) {
-      document.documentElement.classList.add('dark'); // Tailwind dark mode class
+      document.documentElement.classList.add("dark"); // Tailwind dark mode
     } else {
-      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.remove("dark");
     }
   }, [darkMode]);
 
   return (
     <Router>
-      <div className={darkMode ? "dark bg-gray-900 text-white min-h-screen" : "bg-white text-gray-900 min-h-screen"}>
+      <div
+        className={`min-h-screen ${
+          darkMode ? "dark bg-gray-900 text-white" : "bg-white text-gray-900"
+        }`}
+      >
+        {/* Navbar */}
         <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
 
-        {/* Optional extra toggle button here if you want */}
         <div className="fixed top-4 right-4 z-50">
-          <button
-            onClick={() => setDarkMode(!darkMode)}
-            className="px-4 py-2 rounded-md border border-gray-600 dark:border-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition"
-          >
-            {darkMode ? 'Light Mode' : 'Dark Mode'}
-          </button>
-        </div>
+  <button
+    onClick={() => setDarkMode(!darkMode)}
+    className={`px-4 py-2 rounded-md border shadow-md text-sm md:text-base transition
+      ${darkMode
+        ? "bg-gray-800 text-white border-gray-300 hover:bg-gray-700"
+        : "bg-gray-100 text-gray-900 border-gray-600 hover:bg-gray-200"
+      }`}
+  >
+    {darkMode ? "Light Mode" : "Dark Mode"}
+  </button>
+</div>
 
+
+        {/* Routes */}
         <Routes>
-          <Route exact path="/home" element={<Home />} />
-          <Route exact path="/about" element={<About />} />
-          <Route exact path="/skill" element={<Skill />} />
-          <Route exact path="/project" element={<Project />} />
-          <Route exact path="/contact" element={<Contact />} />
-          <Route exact path="/login" element={<Login />} />
-          <Route exact path="/signup" element={<Signup />} />
+          <Route path="/" element={<Navigate to="/home" replace />} />
+          <Route path="/home" element={<Home darkMode={darkMode} />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/skill" element={<Skill />} />
+          <Route path="/project" element={<Project />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
         </Routes>
       </div>
     </Router>
