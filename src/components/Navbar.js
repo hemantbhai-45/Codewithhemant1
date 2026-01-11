@@ -5,15 +5,20 @@ function Navbar({ darkMode, setDarkMode }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <nav className={`shadow-md w-full ${darkMode ? "bg-gray-900" : "bg-white"} fixed top-0 left-0 z-30`}>
+    <nav
+      className={`shadow-md w-full ${
+        darkMode ? "bg-gray-900" : "bg-white"
+      } fixed top-0 left-0 z-30`}
+    >
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-
         {/* Logo + Mobile Hamburger Icon */}
         <div className="flex items-center gap-2">
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(true)}
-            className={`md:hidden focus:outline-none ${darkMode ? "text-gray-300" : "text-gray-600"}`}
+            className={`md:hidden focus:outline-none ${
+              darkMode ? "text-gray-300" : "text-gray-600"
+            }`}
           >
             <svg
               className="w-6 h-6"
@@ -22,14 +27,20 @@ function Navbar({ darkMode, setDarkMode }) {
               strokeWidth="2"
               viewBox="0 0 24 24"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
             </svg>
           </button>
 
           {/* Logo */}
           <Link
             to="/home"
-            className={`text-2xl font-bold ${darkMode ? "text-blue-400" : "text-blue-600"}`}
+            className={`text-2xl font-bold ${
+              darkMode ? "text-blue-400" : "text-blue-600"
+            }`}
           >
             CodeWithHemant
           </Link>
@@ -41,11 +52,31 @@ function Navbar({ darkMode, setDarkMode }) {
             darkMode ? "text-gray-300" : "text-gray-700"
           }`}
         >
-          <li><Link to="/home" className="hover:text-blue-400 transition">Home</Link></li>
-          <li><Link to="/about" className="hover:text-blue-400 transition">About Me</Link></li>
-          <li><Link to="/skill" className="hover:text-blue-400 transition">Skill</Link></li>
-          <li><Link to="/project" className="hover:text-blue-400 transition">Projects</Link></li>
-          <li><Link to="/contact" className="hover:text-blue-400 transition">Contact</Link></li>
+          <li>
+            <Link to="/home" className="hover:text-blue-400 transition">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/about" className="hover:text-blue-400 transition">
+              About Me
+            </Link>
+          </li>
+          <li>
+            <Link to="/skill" className="hover:text-blue-400 transition">
+              Skill
+            </Link>
+          </li>
+          <li>
+            <Link to="/project" className="hover:text-blue-400 transition">
+              Projects
+            </Link>
+          </li>
+          <li>
+            <Link to="/contact" className="hover:text-blue-400 transition">
+              Contact
+            </Link>
+          </li>
           <li>
             <Link
               to="/login"
@@ -82,47 +113,93 @@ function Navbar({ darkMode, setDarkMode }) {
               strokeWidth="2"
               viewBox="0 0 24 24"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
             </svg>
           </button>
         </div>
         <ul className="flex flex-col gap-4 p-4">
           <li>
-            <Link onClick={() => setMobileMenuOpen(false)} to="/home" className="hover:text-blue-400">Home</Link>
+            <Link
+              onClick={() => setMobileMenuOpen(false)}
+              to="/home"
+              className="hover:text-blue-400"
+            >
+              Home
+            </Link>
           </li>
           <li>
-            <Link onClick={() => setMobileMenuOpen(false)} to="/about" className="hover:text-blue-400">About Me</Link>
+            <Link
+              onClick={() => setMobileMenuOpen(false)}
+              to="/about"
+              className="hover:text-blue-400"
+            >
+              About Me
+            </Link>
           </li>
           <li>
-            <Link onClick={() => setMobileMenuOpen(false)} to="/skill" className="hover:text-blue-400">Skill</Link>
+            <Link
+              onClick={() => setMobileMenuOpen(false)}
+              to="/skill"
+              className="hover:text-blue-400"
+            >
+              Skill
+            </Link>
           </li>
           <li>
-            <Link onClick={() => setMobileMenuOpen(false)} to="/project" className="hover:text-blue-400">Projects</Link>
+            <Link
+              onClick={() => setMobileMenuOpen(false)}
+              to="/project"
+              className="hover:text-blue-400"
+            >
+              Projects
+            </Link>
           </li>
           <li>
-            <Link onClick={() => setMobileMenuOpen(false)} to="/contact" className="hover:text-blue-400">Contact</Link>
+            <Link
+              onClick={() => setMobileMenuOpen(false)}
+              to="/contact"
+              className="hover:text-blue-400"
+            >
+              Contact
+            </Link>
           </li>
           <li>
-            <Link onClick={() => setMobileMenuOpen(false)} to="/login" className="bg-blue-700 px-4 py-2 rounded hover:bg-blue-600 transition">Login</Link>
+            <Link
+              onClick={() => setMobileMenuOpen(false)}
+              to="/login"
+              className="bg-blue-700 px-4 py-2 rounded hover:bg-blue-600 transition"
+            >
+              Login
+            </Link>
           </li>
           <li>
-            <Link onClick={() => setMobileMenuOpen(false)} to="/signup" className="bg-blue-700 px-4 py-2 rounded hover:bg-blue-600 transition">Signup</Link>
+            <Link
+              onClick={() => setMobileMenuOpen(false)}
+              to="/signup"
+              className="bg-blue-700 px-4 py-2 rounded hover:bg-blue-600 transition"
+            >
+              Signup
+            </Link>
           </li>
         </ul>
 
-        {/* Mobile Dark Mode Toggle inside Sidebar */}
-        <div className="px-4 mt-4">
-          <button
-            onClick={() => setDarkMode(!darkMode)}
-            className={`w-full px-4 py-2 rounded-md border shadow-md transition
-              ${darkMode
-                ? "bg-gray-800 text-white border-gray-300 hover:bg-gray-700"
-                : "bg-gray-100 text-gray-900 border-gray-600 hover:bg-gray-200"
-              }`}
-          >
-            {darkMode ? "Light Mode" : "Dark Mode"}
-          </button>
-        </div>
+       <div className="px-4 mt-4 flex justify-center">
+  <button
+    onClick={() => setDarkMode(!darkMode)}
+    className={`px-4 py-2 rounded-md border shadow-md transition
+      ${darkMode
+        ? "bg-gray-800 text-white border-gray-300 hover:bg-gray-700"
+        : "bg-gray-100 text-gray-900 border-gray-600 hover:bg-gray-200"
+      } whitespace-nowrap text-center`}
+  >
+    {darkMode ? "Light Mode" : "Dark Mode"}
+  </button>
+</div>
+
       </div>
 
       {/* Overlay when menu is open */}
