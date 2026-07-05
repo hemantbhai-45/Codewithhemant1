@@ -1,6 +1,9 @@
 import React from 'react';
 
-function Home({ darkMode }) {
+import { Link } from "react-router-dom";
+
+function Home({ darkMode })
+ {
 
   const features = [
     { title: 'Live Code Editor', desc: 'Write and preview HTML, CSS, and JS in real-time.' },
@@ -25,9 +28,18 @@ function Home({ darkMode }) {
         <p className="text-xl mb-6">
           Your personal coding companion, anytime, anywhere.
         </p>
-        <button className="bg-white text-purple-700 px-6 py-2 rounded-full font-semibold hover:bg-gray-200 transition">
-          Start Coding
-        </button>
+       <ul>
+        <li>
+            <Link
+              // onClick={() => setMobileMenuOpen(false)}
+              to="/Batches"
+              className="bg-white text-purple-700 px-6 py-2 rounded-full font-semibold hover:bg-gray-200 transition "
+            >
+             Start Coding
+            </Link>
+          </li>
+        </ul>
+    
       </section>
 
       {/* Features Section */}
@@ -119,9 +131,17 @@ function Home({ darkMode }) {
         <p className="mb-6">
           Join thousands of learners and build your skills at your pace.
         </p>
-        <button className="bg-white text-purple-700 px-6 py-2 rounded-full font-semibold hover:bg-gray-200">
-          Join Now
-        </button>
+         <ul>
+        <li>
+            <Link
+              // onClick={() => setMobileMenuOpen(false)}
+              to="/join"
+              className="bg-white text-purple-700 px-6 py-2 rounded-full font-semibold hover:bg-gray-200 transition "
+            >
+            Join Now
+            </Link>
+          </li>
+        </ul>
       </section>
 
       {/* Footer */}

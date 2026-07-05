@@ -1,55 +1,78 @@
-import React from 'react';
+import React from "react";
 
-function Contact() {
+function Contact({ darkMode }) {
   return (
-    <div className="min-h-screen bg-gradient-to-tr from-purple-300 via-pink-300 to-red-300 flex items-center justify-center p-8">
-      <div className="bg-white bg-opacity-90 backdrop-blur-md rounded-3xl shadow-2xl max-w-lg w-full p-10">
-        <h2 className="text-4xl font-extrabold text-center text-purple-700 mb-10">
+    <section
+      className={`min-h-screen pt-24 flex items-center justify-center px-6 py-10 transition-all duration-300 ${
+        darkMode
+          ? "bg-gray-900 text-white"
+          : "bg-gradient-to-tr from-purple-300 via-pink-300 to-red-300 text-black"
+      }`}
+    >
+      <div
+        className={`w-full max-w-lg rounded-3xl border shadow-2xl p-8 md:p-10 transition-all duration-300 ${
+          darkMode
+            ? "bg-gray-800 border-gray-700 text-white"
+            : "bg-white/90 border-gray-200 text-gray-800"
+        }`}
+      >
+        <h2 className="text-4xl font-extrabold text-center text-purple-600 mb-10">
           Get In Touch
         </h2>
 
-        <div className="space-y-8 text-gray-800 text-base leading-relaxed">
-          <div className="flex items-center gap-4">
-            <span className="font-semibold w-28 text-purple-600">Name:</span>
+        <div className="space-y-7">
+          <div className="flex items-center">
+            <span className="w-28 font-semibold text-purple-500">Name:</span>
             <span>Hemant Tarde</span>
           </div>
 
-          <div className="flex items-center gap-4">
-            <span className="font-semibold w-28 text-purple-600">Email:</span>
+          <div className="flex items-center">
+            <span className="w-28 font-semibold text-purple-500">Email:</span>
             <a
               href="mailto:hemanttarde04@gmail.com"
-              className="text-blue-600 hover:underline"
+              className="text-blue-500 hover:underline break-all"
             >
               hemanttarde04@gmail.com
             </a>
           </div>
 
-          <div className="flex items-center gap-4">
-            <span className="font-semibold w-28 text-purple-600">Phone:</span>
-            <a href="tel:+919876543210" className="hover:text-purple-700">
+          <div className="flex items-center">
+            <span className="w-28 font-semibold text-purple-500">Phone:</span>
+            <a
+              href="tel:+918766748365"
+              className="hover:text-purple-500 transition"
+            >
               +91 8766748365
             </a>
           </div>
 
-          <div className="flex items-start gap-4">
-            <span className="font-semibold w-28 text-purple-600">Address:</span>
+          <div className="flex items-start">
+            <span className="w-28 font-semibold text-purple-500">
+              Address:
+            </span>
             <address className="not-italic">
-              123, Vasudha Nagar <br />
-              Dondaicha, Maharashtra <br />
-              India - 411001
+              Dondaicha
+              <br />
+              Maharashtra
+              <br />
+              India
             </address>
           </div>
 
           <div>
-            <h3 className="font-semibold text-purple-700 mb-2">Additional Info</h3>
-            <p>
-              Feel free to reach out for project collaborations, questions, or just a friendly hello! 
-              I’m always excited to connect with new people and discuss ideas.
+            <h3 className="font-semibold text-purple-600 mb-2">
+              Additional Info
+            </h3>
+
+            <p className={darkMode ? "text-gray-300" : "text-gray-700"}>
+              Feel free to reach out for project collaborations, questions, or
+              just a friendly hello. I'm always excited to connect with new
+              people and work on exciting projects.
             </p>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

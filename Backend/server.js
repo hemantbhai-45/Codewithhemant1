@@ -4,7 +4,7 @@ const dotenv = require("dotenv");
 const connectDB = require("./config/db");
 const authRoutes = require("./routes/auth");
 const chatRoutes = require("./routes/chat"); // 👈 chatbot route
-
+const axios = require('axios');
 const path = require("path");
 dotenv.config({ path: path.join(__dirname, ".env") });
 

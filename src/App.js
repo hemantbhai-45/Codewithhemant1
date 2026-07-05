@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
+import JoinForm from "./components/JoinForm";
 import Login from "./components/Login";
 import Home from "./components/Home";
 import About from "./components/About";
@@ -9,6 +10,7 @@ import Chatbot from "./components/Chatbot";
 import Skill from "./components/Skill";
 import Project from "./components/Project";
 import Contact from "./components/Contact";
+import Batches from "./components/Batches";
 import {
   BrowserRouter as Router,
   Routes,
@@ -61,10 +63,12 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/home" replace />} />
           <Route path="/home" element={<Home darkMode={darkMode} />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/skill" element={<Skill />} />
-          <Route path="/project" element={<Project />} />
-          <Route path="/contact" element={<Contact />} />
+         <Route path="/skill" element={<Skill darkMode={darkMode} />} />
+         <Route path="/join" element={<JoinForm darkMode={darkMode} />} />
+         <Route path="/Batches" element={<Batches darkMode={darkMode} />} />
+          <Route path="/about" element={<About darkMode={darkMode} />} />
+       <Route path="/project" element={<Project darkMode={darkMode} />} />
+<Route path="/contact" element={<Contact darkMode={darkMode} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
         </Routes>
